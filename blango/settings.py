@@ -41,7 +41,7 @@ class Dev(Configuration):
 
 
     # Application definition
-
+    AUTH_USER_MODEL = "blango_auth.User"
     INSTALLED_APPS = [
         'django.contrib.admin',
         'django.contrib.auth',
@@ -52,6 +52,7 @@ class Dev(Configuration):
         "debug_toolbar",
         "crispy_forms",
         "crispy_bootstrap5",
+        "blango_auth",
         "blog",
     ]
     INTERNAL_IPS = ["192.168.11.179"]
