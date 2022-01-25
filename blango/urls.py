@@ -27,6 +27,7 @@ urlpatterns = [
     path("", blog.views.index),
     path("ip/", blog.views.get_ip),
     path("post/<slug>/", blog.views.post_detail, name="blog-post-detail"),
+    path("api/v1/", include("blog.api_urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/", include("allauth.urls")),
     path(
