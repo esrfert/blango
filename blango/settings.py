@@ -55,6 +55,7 @@ class Dev(Configuration):
         "debug_toolbar",
         "crispy_forms",
         "crispy_bootstrap5",
+        "rest_framework",
         "blango_auth",
         "blog",
         "allauth",
