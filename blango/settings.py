@@ -57,6 +57,7 @@ class Dev(Configuration):
         "crispy_bootstrap5",
         "rest_framework",
         "blango_auth",
+        "rest_framework.authtoken",
         "blog",
         "allauth",
         "allauth.account",
@@ -98,7 +99,13 @@ class Dev(Configuration):
     ]
 
     WSGI_APPLICATION = 'blango.wsgi.application'
-
+    REST_FRAMEWORK = {
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+            "rest_framework.authentication.BasicAuthentication",
+            "rest_framework.authentication.SessionAuthentication",
+            "rest_framework.authentication.TokenAuthentication",
+        ]
+    }
 
     # Database
     # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
