@@ -59,6 +59,7 @@ class Dev(Configuration):
         "blango_auth",
         "rest_framework.authtoken",
         "blog",
+        "drf_yasg",
         "allauth",
         "allauth.account",
         "allauth.socialaccount",
@@ -98,6 +99,13 @@ class Dev(Configuration):
         },
     ]
 
+
+    SWAGGER_SETTINGS = {
+        "SECURITY_DEFINITIONS": {
+            "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+            "Basic": {"type": "basic"},
+        }
+    }
     WSGI_APPLICATION = 'blango.wsgi.application'
     REST_FRAMEWORK = {
         "DEFAULT_AUTHENTICATION_CLASSES": [
